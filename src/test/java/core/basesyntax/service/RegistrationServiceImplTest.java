@@ -5,11 +5,12 @@ import core.basesyntax.model.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class RegistrationServiceImplTest {
 
-    RegistrationServiceImpl registrationServiceImpl = new RegistrationServiceImpl();
+    private RegistrationServiceImpl registrationServiceImpl = new RegistrationServiceImpl();
 
     @BeforeEach
     void setUp() {
