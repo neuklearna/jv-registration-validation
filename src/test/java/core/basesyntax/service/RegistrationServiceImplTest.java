@@ -41,8 +41,8 @@ class RegistrationServiceImplTest {
         User user = new User();
         user.setLogin("marty");
         assertThrows(RegisterationException.class, () -> {
-           registrationServiceImpl.register(user);
-       });
+            registrationServiceImpl.register(user);
+        });
     }
 
     @Test
