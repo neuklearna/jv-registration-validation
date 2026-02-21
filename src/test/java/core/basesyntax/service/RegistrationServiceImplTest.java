@@ -40,7 +40,7 @@ class RegistrationServiceImplTest {
     void register_userLoginIs5orLess_NotOK() {
         User user = new User();
         user.setLogin("marty");
-       assertThrows(RegisterationException.class, () -> {
+        assertThrows(RegisterationException.class, () -> {
            registrationServiceImpl.register(user);
        });
     }
