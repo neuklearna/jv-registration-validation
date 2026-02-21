@@ -1,12 +1,12 @@
 package core.basesyntax.service;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import core.basesyntax.db.Storage;
 import core.basesyntax.model.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class RegistrationServiceImplTest {
 
@@ -21,7 +21,9 @@ class RegistrationServiceImplTest {
     void register_userLoginIsNull_NotOK() {
         User user = new User();
         user.setLogin(null);
-        assertThrows(RegisterationException.class, () -> {registrationServiceImpl.register(user);});
+        assertThrows(RegisterationException.class, () -> {
+            registrationServiceImpl.register(user);
+        });
     }
 
     @Test
@@ -38,7 +40,9 @@ class RegistrationServiceImplTest {
     void register_userLoginIs5orLess_NotOK() {
         User user = new User();
         user.setLogin("marty");
-       assertThrows(RegisterationException.class, () -> {registrationServiceImpl.register(user);});
+       assertThrows(RegisterationException.class, () -> {
+           registrationServiceImpl.register(user);
+       });
     }
 
     @Test
@@ -48,7 +52,9 @@ class RegistrationServiceImplTest {
         user.setPassword("anytram");
         user.setAge(18);
         registrationServiceImpl.register(user);
-        assertThrows(RegisterationException.class, () -> {registrationServiceImpl.register(user);});
+        assertThrows(RegisterationException.class, () -> {
+            registrationServiceImpl.register(user);
+        });
     }
 
     @Test
@@ -56,7 +62,9 @@ class RegistrationServiceImplTest {
         User user = new User();
         user.setLogin("martyna");
         user.setPassword(null);
-        assertThrows(RegisterationException.class, () -> {registrationServiceImpl.register(user);});
+        assertThrows(RegisterationException.class, () -> {
+            registrationServiceImpl.register(user);
+        });
     }
 
     @Test
@@ -75,7 +83,9 @@ class RegistrationServiceImplTest {
         user.setLogin("martynaaa");
         user.setAge(18);
         user.setPassword("anytr");
-        assertThrows(RegisterationException.class, () -> {registrationServiceImpl.register(user);});
+        assertThrows(RegisterationException.class, () -> {
+            registrationServiceImpl.register(user);
+        });
     }
 
     @Test
@@ -84,7 +94,9 @@ class RegistrationServiceImplTest {
         user.setLogin("martyna");
         user.setPassword("anytram");
         user.setAge(null);
-        assertThrows(RegisterationException.class, () -> {registrationServiceImpl.register(user);});
+        assertThrows(RegisterationException.class, () -> {
+            registrationServiceImpl.register(user);
+        });
     }
 
     @Test
@@ -103,12 +115,16 @@ class RegistrationServiceImplTest {
         user.setLogin("martyna");
         user.setPassword("anytram");
         user.setAge(17);
-        assertThrows(RegisterationException.class, () -> {registrationServiceImpl.register(user);});
+        assertThrows(RegisterationException.class, () -> {
+            registrationServiceImpl.register(user);
+        });
     }
 
     @Test
     void register_userIsNull_NotOk() {
-        assertThrows(RegisterationException.class, () -> {registrationServiceImpl.register(null);});
+        assertThrows(RegisterationException.class, () -> {
+            registrationServiceImpl.register(null);
+        });
     }
 
     @Test
